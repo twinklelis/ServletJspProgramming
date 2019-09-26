@@ -1,12 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>ServletJspProgramming</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+  	<servlet>
+  		<servlet-name>dispatcher</servlet-name>
+  		<!-- <servlet-class>com.mycompany.web.servlet.DispatcherServlet</servlet-class> -->
+  		<!-- 순서바꾸면 안됨 꼭 name쓰고 class 써야함 -->
+  		
+  		<!-- <init-param>
+  			<param-name>x</param-name>
+  			<param-value>10</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>y</param-name>
+  			<param-value>20</param-value>
+  		</init-param> -->
+  		
+  		<servlet-class>com.mycompany.web.servlet.DispatcherServlet2</servlet-class>
+  		<init-param> <!-- init-param은 servlet에게 어떤 정보를 제공하기 위해서 작성된다 -->
+  			<param-name>contextConfigLocation</param-name> <!-- 변수이름 -->
+  			<!-- servlet을 사용할 때 parameter가 알 수 있는 이름을 줘야함! servlet 소스를 잘 보고 param값에 대입하기 -->
+  			<param-value>/WEB-INF/servletContext.xml</param-value> <!-- 변수값 -->
+  		</init-param>
+  		<load-on-startup>1</load-on-startup> <!-- load-on-startup은 무조건 init 밑으로 와야함 -->
+  	</servlet>
+  	
+  	<servlet-mapping>
+  		<servlet-name>dispatcher</servlet-name>
+  		<url-pattern>/</url-pattern>
+  	</servlet-mapping>
 </web-app>

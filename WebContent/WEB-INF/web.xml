@@ -1,30 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+	<!-- DispatcherServlet1 설정 -->
+	<servlet>
+		<servlet-name>dispatcher1</servlet-name> <!-- spring 에서 제공하는 servlet 이름이 dispatcher -->
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet1</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher1</servlet-name>
+		<url-pattern>/dispatcher1</url-pattern>
+	</servlet-mapping>
+	<!-- DispatcherServlet1 끝 -->
+	
+	<!-- DispatcherServlet2 설정 -->
   	<servlet>
-  		<servlet-name>dispatcher</servlet-name>
-  		<!-- <servlet-class>com.mycompany.web.servlet.DispatcherServlet</servlet-class> -->
-  		<!-- 순서바꾸면 안됨 꼭 name쓰고 class 써야함 -->
-  		
-  		<!-- <init-param>
-  			<param-name>x</param-name>
-  			<param-value>10</param-value>
-  		</init-param>
-  		<init-param>
-  			<param-name>y</param-name>
-  			<param-value>20</param-value>
-  		</init-param> -->
-  		
+  		<servlet-name>dispatcher2</servlet-name>
   		<servlet-class>com.mycompany.web.servlet.DispatcherServlet2</servlet-class>
-  		<init-param> <!-- init-param은 servlet에게 어떤 정보를 제공하기 위해서 작성된다 -->
-  			<param-name>contextConfigLocation</param-name> <!-- 변수이름 -->
-  			<!-- servlet을 사용할 때 parameter가 알 수 있는 이름을 줘야함! servlet 소스를 잘 보고 param값에 대입하기 -->
-  			<param-value>/WEB-INF/servletContext.xml</param-value> <!-- 변수값 -->
+  		<init-param>
+  			<param-name>contextConfigLocation</param-name>
+  			<param-value>/WEB-INF/servletContext.xml</param-value>
   		</init-param>
-  		<load-on-startup>1</load-on-startup> <!-- load-on-startup은 무조건 init 밑으로 와야함 -->
+  		<load-on-startup>1</load-on-startup>
+  		<!-- 미리 객체 생성시키는 태그 -->
   	</servlet>
-  	
   	<servlet-mapping>
-  		<servlet-name>dispatcher</servlet-name>
-  		<url-pattern>/</url-pattern>
+  		<servlet-name>dispatcher2</servlet-name>
+  		<url-pattern>/dispatcher2</url-pattern>
   	</servlet-mapping>
+  	<!-- DispatcherServlet2 끝 -->
+  	
+  	<!-- DispatcherServlet3 설정 -->
+	<servlet>
+		<servlet-name>dispatcher3</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet3</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher3</servlet-name>
+		<url-pattern>/dispatcher3</url-pattern>
+	</servlet-mapping>
+	<!-- DispatcherServlet3 끝 -->
+	
+	<!-- DispatcherServlet4 설정 -->
+	<servlet>
+		<servlet-name>dispatcher4</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet4</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher4</servlet-name>
+		<url-pattern>/dispatcher4</url-pattern>
+	</servlet-mapping>
+	<!-- DispatcherServlet4 끝 -->
+	
+	<!-- DispatcherServlet5 설정 -->
+	<servlet>
+		<servlet-name>dispatcher5</servlet-name>
+		<servlet-class>com.mycompany.web.servlet.DispatcherServlet5</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dispatcher5</servlet-name>
+		<url-pattern>/dispatcher5</url-pattern>
+	</servlet-mapping>
+	<!-- DispatcherServlet5 끝 -->
 </web-app>

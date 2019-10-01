@@ -19,6 +19,7 @@
 			#content{
 				flex-grow : 1;
 				display : flex;
+				min-height : 0;
 			}
 			#sideBar{
 				width : 300px;
@@ -84,6 +85,24 @@
 								<input type="number" name="age" value="27"/>
 								<input type="submit" value="POST 방식으로 요청"/>
 							</form>
+						</li>
+						<li>
+							<form action="dispatcher6" method="get" target="iframe">
+								<input type="text" name="title"/>
+								<input type="text" name="content"/>
+								<input type="submit" value="GET 방식으로 요청"/>
+							</form>
+							
+							<form action="dispatcher6" method="post" target="iframe">
+								<input type="text" name="title"/>
+								<input type="text" name="content"/>
+								<input type="submit" value="POST 방식으로 요청"/>
+							</form>
+						</li>
+						<li>
+							<p>객체 사용 범위</p>
+							<a href="dispatcher7" target="iframe">객체 저장하기</a>
+							<a href="dispatcher8" target="iframe">객체 가져오기</a>
 						</li>
 					</ul>
 				</div>
